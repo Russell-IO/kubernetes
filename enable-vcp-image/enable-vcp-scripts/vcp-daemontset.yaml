@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: vcp-daementset
@@ -15,7 +15,7 @@ spec:
       serviceAccountName: vcpsa
       containers:
       - name: vcp-container
-        image: cnastorage/enablevcp:v1
+        image: russell/enablevcp:latest
         env:
         - name: POD_ROLE
           value: "DAEMON"
